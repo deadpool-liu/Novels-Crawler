@@ -1,0 +1,15 @@
+{
+    "name": "Shadow-To-Open",
+    "description": "将网页上的shadow-root(closed)重载成shadow-root(open)",
+    "version": "1.0",
+    "author": "Author",
+    "manifest_version": 2,
+    "permissions": ["<all_urls>",  "https://www.baidu.com/*"],
+    "content_scripts": [{
+        "matches": ["https://th.booktrk.com/*", "https://en.booktrk.com/*", "https://booktrk.com/*", "https://swnovels.com/*"],
+        "run_at": "document_start",
+        "all_frames": true,
+        "js": ["shadowInject.js"]
+    }],
+    "web_accessible_resources": ["injected.js"]
+}
